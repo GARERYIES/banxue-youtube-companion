@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>伴学 · 一起看，慢慢懂</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<aside class="rail"><a class="brand" href="/" aria-label="伴学首页"><span class="brand-icon">伴</span><span>伴学<small>一起看，慢慢懂</small></span></a>
+<nav><button class="nav active" data-view="watch"><span>◉</span>一起看</button><button class="nav" data-view="notes"><span>▤</span>我的笔记 <i id="saved-count">0</i></button><button class="nav" data-view="review"><span>◇</span>温故知新 <i id="due-count">0</i></button></nav>
+<div class="rail-section"><span class="eyebrow">课程书架</span><div id="library"></div></div>
+<div class="rail-footer"><span class="status-dot" id="codex-dot"></span><span id="codex-label">正在检查连接</span><small>笔记保存在这台电脑<br>AI 生成使用你的 Codex 额度</small></div></aside>
+<main>
+<header><div class="breadcrumb" id="breadcrumb">学习空间 / 一起看</div><div class="header-right"><span class="local-pill">本地笔记</span><button id="export" class="text-button">导出笔记 ↗</button></div></header>
+<div class="extension-library"><label for="course-picker">课程书架</label><select id="course-picker" aria-label="选择已保存的课程"></select></div>
+<section id="watch-view" class="view">
+<div class="intro"><div><div class="eyebrow">按自己的节奏，慢慢理解</div><h1>让理解，跟上每一个知识点。</h1><p>你专心听讲，伴学把刚刚讲过的内容，整理成可以回看的中文卡片。</p></div><span class="intro-flower">✳</span></div>
+<form id="connect-form" class="connect"><label for="video-url">今天一起看什么？</label><div class="connect-row"><input id="video-url" type="url" placeholder="粘贴 YouTube 课程视频链接" required><button class="primary" id="connect-button">开始陪看 <span>↗</span></button></div><div class="connect-hint">课程会在独立 Chrome 窗口打开 · 请保持 CC 字幕开启</div></form>
+<div class="workspace"><div class="watch-column">
+<section class="course-panel"><div class="course-top"><span class="eyebrow">正在学习</span><span id="phase" class="phase">等待开始</span></div><h2 id="course-title">从你感兴趣的一堂课开始</h2><div class="player-preview"><div class="orbit"><span>◈</span></div><div><strong id="player-headline">课程在独立窗口播放</strong><p id="player-message">这里会跟随你的进度，保留每一个值得回看的时刻。</p></div></div><div class="progress-track"><div id="progress-fill"></div></div><div class="playback-row"><span id="time-label">00:00 / 00:00</span><div><button id="play-button" class="subtle" disabled>播放</button><button id="summarize-button" class="subtle" disabled>总结刚刚这一段</button><button id="stop-button" class="subtle" disabled>结束陪看</button></div></div></section>
+<section class="timeline-panel"><div class="section-head"><h3>知识点时间线</h3><span id="card-count">0 张卡片</span></div><div id="timeline"><div class="empty-small">第一张小结出现后，你的学习路线会从这里展开。</div></div></section>
+<div class="small-note">第一版依据实际播放的字幕整理。图示和公式未出现在字幕中时，卡片会注明需要回看画面。</div>
+</div><aside class="card-column"><div class="section-head"><h3 id="current-label">此刻的知识点</h3><span id="generation-status" class="soft-label">等待讲解</span></div><div id="current-card" class="concept-card empty-card"><div class="empty-illustration"><span>✧</span><span>▤</span><span>✧</span></div><h2>留一点空间，给新的理解。</h2><p>积累一小段讲解后，中文小结会出现在这里。你也可以随时点“总结刚刚这一段”。</p><div class="card-placeholder"><i></i><i></i><i></i></div></div></aside></div>
+</section>
+<section id="notes-view" class="view hidden"><div class="page-heading"><div class="eyebrow">留住每一次理解</div><h1>把理解，留在自己的笔记里。</h1><p>保存有用的卡片，写下自己的理解。每一条笔记，都能回到最初的讲解。</p></div><div class="notes-toolbar"><input id="search" placeholder="搜索概念、公式或自己的笔记…"><label><input type="checkbox" id="all-cards"> 显示全部卡片</label></div><div id="notes-grid" class="notes-grid"></div></section>
+<section id="review-view" class="view hidden"><div class="page-heading"><div class="eyebrow">让记忆慢慢扎根</div><h1>先想一想，再翻开答案。</h1><p>用自己的话解释，比再读一遍更有帮助。</p></div><div id="review-area"></div></section>
+<div id="error-banner" class="error-banner hidden" role="alert"></div><div id="toast" class="toast hidden" role="status"></div>
+</main><script src="/app.js" type="module"></script></body></html>

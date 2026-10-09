@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "伴学 · YouTube 中文陪看",
+  "description": "点一下，跟随当前 YouTube 视频生成中文知识点卡片，保存笔记并复习。",
+  "version": "0.2.0",
+  "minimum_chrome_version": "116",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv2XJG0Fw7zZp2mFDb6DoAOuVXu1hEOWrPpDgNtAr9OzX2qBGaBNOVYYpWUV25KDxcEdY6YYxnAmvsCjn/hrowuWWayNeCpDmh82oeoA2p0+GHetgxG1NL4UB1zn/MZjxcQCHMIowsRg24C13Nkbj6z7Any2xgN1NefwM8V8QXrJOEmSmYSOUy0gAlQOiVkYQLzFcnVf4hovaGAyI6RRSwWYHKT/5dh8tr/D45JNonPnYDA9uuaNAQDb0FJJVWyTUbmYKfsVNLtaSU+2DNbbTdGi/Q0RonAk0R1evWajfuJDypdKH9BsGa6ZPU/keCAFyt7cIz5mkEl8NN/TJLOIQOwIDAQAB",
+  "permissions": [
+    "activeTab",
+    "sidePanel",
+    "storage",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:4318/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "伴学 · 陪我看当前视频",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; frame-src http://127.0.0.1:4318; connect-src http://127.0.0.1:4318"
+  }
+}

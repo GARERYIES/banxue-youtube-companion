@@ -1,0 +1,14 @@
+node_modules/
+/data/
+/work/
+/native/install-config.json
+/native/launch-host
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+*.pem
+*.key
+.DS_Store
+coverage/

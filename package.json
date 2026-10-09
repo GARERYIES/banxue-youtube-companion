@@ -1,0 +1,19 @@
+{
+  "name": "banxue-youtube-companion",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node start.mjs",
+    "test": "node --test test/*.test.mjs",
+    "install:local": "node native/install.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "description": "YouTube 中文伴学 Chrome 扩展：实时卡片、本地笔记与复习",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GARERYIES/banxue-youtube-companion.git"
+  }
+}
